@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Быстропоиск — вакансии сами приходят в Telegram</title>
+<meta name="description" content="Бот в Telegram читает описания вакансий вместо вас и присылает только те, что подходят по зарплате, формату и должности.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <span class="nav-brand">Быстропоиск</span>
+  <a href="#pain">Проблема</a>
+  <a href="#how">Как работает</a>
+  <a href="#setup">Настройки</a>
+  <a class="btn btn-primary" href="#survey">Пройти опрос · 2 мин</a>
+</nav>
+
+<div class="container">
+
+  <section class="hero">
+    <div>
+      <span class="tag tag-outline hero-tag">Проверяем идею · бота ещё нет</span>
+      <h1>
+        <span>Вакансии сами</span>
+        <span>приходят в Telegram.</span>
+        <span class="accent">Только те, что подходят.</span>
+      </h1>
+      <p class="hero-lead">Бот читает описания вакансий вместо вас: отсеивает «удалёнку» с офисом три дня в неделю, зарплату «по договорённости» и не ту должность. В чат приходят 2–3 вакансии в день, а не 200.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#survey">Хочу такого бота</a>
+        <a class="btn btn-ghost" href="#how">Посмотреть, как ищет</a>
+      </div>
+      <p class="hero-note">Продукта пока нет — сначала спрашиваем вас. 2 минуты опроса решают, каким он будет и для кого.</p>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-glow"></div>
+      <div class="hero-visual-inner">
+        <div class="role-tabs">
+          <button type="button" class="role-tab is-active" data-role="0">Frontend-разработчик</button>
+          <button type="button" class="role-tab" data-role="1">Менеджер по продажам</button>
+          <button type="button" class="role-tab" data-role="2">Кладовщик</button>
+        </div>
+        <div class="chat-card">
+          <div class="chat-header">
+            <div class="chat-avatar">Б</div>
+            <div>
+              <div class="chat-title">Быстропоиск</div>
+              <div class="chat-sub">Telegram · онлайн</div>
+            </div>
+          </div>
+          <div class="chat-body">
+            <div class="msg-user" data-chat-query>Frontend, от 220 000 ₽, только удалёнка</div>
+            <div class="typing" data-typing>
+              <span></span><span></span><span></span>
+            </div>
+            <div class="chat-answer is-visible" data-answer>
+              <div class="msg-bot" data-chat-report>Проверил 47 новых вакансий за сутки. Подошла 1 — остальные отсеял: 21 гибрид, 14 без вилки, 11 не тот стек.</div>
+              <div class="job-card">
+                <div class="job-card-top">
+                  <div class="job-title" data-job-title>Senior Frontend</div>
+                  <div class="job-match" data-job-match>94% совпадение</div>
+                </div>
+                <div class="job-meta" data-job-meta>260 000 – 310 000 ₽ · полностью удалённо · React, TS</div>
+                <div class="job-divider"></div>
+                <div class="job-tags">
+                  <span class="tag tag-accent" data-job-tag1>вилка указана</span>
+                  <span class="tag tag-neutral" data-job-tag2>без тестового</span>
+                </div>
+              </div>
+              <div class="chat-why" data-chat-why>Прислал, потому что вилка выше вашей и удалёнка без оговорок в тексте.</div>
+            </div>
+          </div>
+        </div>
+        <p class="hero-hint">Кликните профессию — бот пересоберёт подборку. Пример интерфейса, не рабочий бот.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pain" class="pain-section">
+    <div class="section-kicker"><span class="rule"></span><span>Что бесит в поиске сейчас</span></div>
+    <h2>Вакансия обещает одно, а в тексте — другое</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-claim">«Удалённая работа»</div>
+        <div class="pain-truth">В четвёртом абзаце — офис три дня в неделю и обязательные встречи по вторникам.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-claim">«Зарплата по договорённости»</div>
+        <div class="pain-truth">Вилку называют на третьем созвоне. Часто ниже, чем вы согласны обсуждать.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-claim">«Доход без ограничений»</div>
+        <div class="pain-truth">Оклада нет, только процент. Понятно это лишь из мелкого текста внизу.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-claim">200 писем в день</div>
+        <div class="pain-truth">Одна и та же вакансия приходит с пяти сайтов, а нужных среди них две.</div>
+      </div>
+    </div>
+    <p class="pain-footnote">Чтобы это выяснить, приходится открыть каждую вакансию и дочитать до конца. Быстропоиск делает это за вас и молчит, пока не найдёт подходящую.</p>
+  </section>
+</div>
+
+<section aria-label="Цифры" class="stats-section">
+  <div class="container stats-grid">
+    <div>
+      <div class="stat-num">47<sup>*</sup></div>
+      <div class="stat-label">вакансий бот читает за сутки</div>
+    </div>
+    <div>
+      <div class="stat-num">2–3<sup>*</sup></div>
+      <div class="stat-label">доходят до вашего чата</div>
+    </div>
+    <div>
+      <div class="stat-num">1 мин<sup>*</sup></div>
+      <div class="stat-label">на настройку поиска</div>
+    </div>
+    <div>
+      <div class="stat-num">0 ₽<sup>**</sup></div>
+      <div class="stat-label">для участников опроса</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <section id="how" class="how-section">
+    <div class="section-kicker"><span class="rule"></span><span>Как это работает</span></div>
+
+    <div class="step-row">
+      <div class="step-num">01</div>
+      <h2>Настраиваете фильтр</h2>
+      <p class="step-copy">Должность, зарплата от, формат работы и источники — прямо в чате, без анкет и резюме. Одно сообщение боту, дальше правится в любой момент.</p>
+    </div>
+    <div class="step-row">
+      <div class="step-num">02</div>
+      <h2>Бот читает описания</h2>
+      <p class="step-copy">Не только заголовок и теги: он разбирает текст вакансии целиком и ловит несоответствия — офис под видом удалёнки, процент вместо оклада, другой график или район.</p>
+    </div>
+    <div class="step-row">
+      <div class="step-num">03</div>
+      <h2>Приходит только подходящее</h2>
+      <p class="step-copy">В Telegram падают 2–3 вакансии в день с процентом совпадения и объяснением, почему прислали. Не то — жмёте «не подходит», и фильтр становится точнее.</p>
+    </div>
+  </section>
+
+  <section id="setup" class="setup-section">
+    <div>
+      <div class="section-kicker"><span class="rule"></span><span>Что настраиваете вы</span></div>
+      <h2>Три ручки — и тишина в чате вместо спама</h2>
+      <p class="setup-lead">Источники, должность и зарплата. Остальное — работа бота: он читает текст вакансии, а не только заголовок, и объясняет, почему прислал именно эту.</p>
+      <div class="knob-list">
+        <div class="knob">
+          <span class="knob-num">01</span>
+          <div>
+            <div class="knob-title">Источники</div>
+            <div class="knob-copy">hh.ru, Авито Работа, VK Работа, Telegram-каналы — включаете нужные, остальные молчат.</div>
+          </div>
+        </div>
+        <div class="knob">
+          <span class="knob-num">02</span>
+          <div>
+            <div class="knob-title">Должность</div>
+            <div class="knob-copy">Несколько формулировок сразу — бот поймёт синонимы и близкие роли, в IT и вне его.</div>
+          </div>
+        </div>
+        <div class="knob">
+          <span class="knob-num">03</span>
+          <div>
+            <div class="knob-title">Зарплата и условия</div>
+            <div class="knob-copy">Порог по вилке, график, район или удалёнка. Вакансии без указанной зарплаты можно скрыть совсем.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-head-title">Источники поиска</div>
+        <div class="card-head-meta">включено 4 из 6</div>
+      </div>
+      <div class="source-list">
+        <div class="source-row is-on">
+          <div class="source-left"><span class="source-mark">hh</span><span class="source-name">hh.ru</span></div>
+          <span class="switch is-on"><span class="switch-knob"></span></span>
+        </div>
+        <div class="source-row is-on">
+          <div class="source-left"><span class="source-mark">Ав</span><span class="source-name">Авито Работа</span></div>
+          <span class="switch is-on"><span class="switch-knob"></span></span>
+        </div>
+        <div class="source-row is-on">
+          <div class="source-left"><span class="source-mark">TG</span><span class="source-name">Telegram-каналы</span></div>
+          <span class="switch is-on"><span class="switch-knob"></span></span>
+        </div>
+        <div class="source-row is-on">
+          <div class="source-left"><span class="source-mark">VK</span><span class="source-name">VK Работа</span></div>
+          <span class="switch is-on"><span class="switch-knob"></span></span>
+        </div>
+        <div class="source-row">
+          <div class="source-left"><span class="source-mark">Хб</span><span class="source-name">Хабр Карьера</span></div>
+          <span class="switch"><span class="switch-knob"></span></span>
+        </div>
+        <div class="source-row">
+          <div class="source-left"><span class="source-mark">Рб</span><span class="source-name">Работа.ру</span></div>
+          <span class="switch"><span class="switch-knob"></span></span>
+        </div>
+      </div>
+      <div class="card-divider"></div>
+      <p class="card-footnote">Макет интерфейса. Финальный список источников зависит от результатов опроса — напишите в форме, чего вам не хватает.</p>
+    </div>
+  </section>
+</div>
+
+<section id="survey" class="survey-section">
+  <div class="container survey-grid">
+    <div class="survey-sticky">
+      <div class="section-kicker"><span class="rule"></span><span>Опрос · 2 минуты</span></div>
+      <h2>Скажите, каким должен быть бот</h2>
+      <p class="survey-lead">Мы ещё не написали ни строчки продакшн-кода. Несколько вопросов без регистрации — и мы соберём то, чем будете пользоваться вы, а не то, что придумали мы.</p>
+      <div class="survey-bullets">
+        <div class="survey-bullet"><span class="dash">—</span><span>Где вы ищете работу сейчас и что бесит больше всего</span></div>
+        <div class="survey-bullet"><span class="dash">—</span><span>Какие фильтры для вас обязательны, а какие лишние</span></div>
+        <div class="survey-bullet"><span class="dash">—</span><span>Готовы ли платить — и сколько это стоит по-вашему</span></div>
+      </div>
+      <p class="survey-privacy">Ответы анонимны и нужны только для решения о запуске. Почту оставлять не обязательно — только если хотите в бесплатную бету.</p>
+    </div>
+
+    <div class="survey-cta card">
+      <div class="survey-cta-icon">📋</div>
+      <div class="survey-cta-title">Форма на 2 минуты</div>
+      <p class="survey-cta-copy">10 вопросов о том, как вы ищете работу сейчас и каким должен быть бот. Откроется в окне поверх страницы.</p>
+      <button type="button" class="btn btn-primary btn-block" data-open-survey data-survey-url="https://docs.google.com/forms/d/e/1FAIpQLSfD08Xu3uC8WnaakwlQqK0zPU3QBnBX7hMGwcLTaCBdLUNbqg/viewform?embedded=true" data-survey-title="Опрос Быстропоиск">Открыть опрос</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="bonus-cta">
+      <p class="bonus-cta-text"><strong>Хочешь помочь сильнее?</strong> Есть ещё 5 вопросов про фичи бота — на 2 минуты.</p>
+      <button type="button" class="btn btn-ghost" data-open-survey data-survey-url="https://docs.google.com/forms/d/e/1FAIpQLSdj_jdzgTSZuGUBpd95DWCbuU_qU9J1Bk2zmMMUzWzWOmHDtQ/viewform?embedded=true" data-survey-title="Опрос про фичи">Ответить · 5 вопросов</button>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" data-survey-modal hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="survey-modal-title">
+    <div class="modal-head">
+      <span class="modal-title" id="survey-modal-title" data-survey-modal-title>Опрос Быстропоиск</span>
+      <button type="button" class="modal-close" data-close-survey aria-label="Закрыть">✕</button>
+    </div>
+    <div class="modal-body">
+      <iframe class="modal-iframe" data-survey-iframe title="Опрос Быстропоиск" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="footnotes">
+    <span>* Цифры приблизительные: это наши ожидания от продукта, а не результаты измерений — бот ещё не запущен.</span>
+    <span>** 0 ₽ — на время бета-теста для участников опроса. Как будет устроена цена после, ещё решаем: об этом тоже спрашиваем в форме.</span>
+  </div>
+  <footer class="footer">
+    <span>Быстропоиск · проверка идеи, 2026</span>
+    <span>Бот не откликается за вас и не публикует резюме — только приносит вакансии в чат</span>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
